@@ -1,1 +1,7 @@
 flask
+
+pytest
+selenium
+
+
+pytest-flask
