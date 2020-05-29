@@ -1,0 +1,46 @@
+{
+  "id": "61639aa0-6006-4029-bd5e-544d361fe18a",
+  "version": "2.0",
+  "name": "test",
+  "url": "http://localhost:5000",
+  "tests": [{
+    "id": "a4022308-2adb-4d72-b041-4b952fa8d8fa",
+    "name": "open page",
+    "commands": [{
+      "id": "4e5ae2a1-ac5c-4792-b8e2-429b7b4fc7c6",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd88f18d-9a73-4c41-b528-3e0317feddec",
+      "comment": "",
+      "command": "verifyTitle",
+      "target": "",
+      "targets": [],
+      "value": "\"Not\""
+    }, {
+      "id": "b5e47ca9-fae1-4fc6-8ec0-a743831cde35",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Hello world')]", "xpath:innerText"]
+      ],
+      "value": "Hello World"
+    }]
+  }],
+  "suites": [{
+    "id": "186b9c36-51f2-4c2a-9870-16430d84b2a8",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a4022308-2adb-4d72-b041-4b952fa8d8fa"]
+  }],
+  "urls": ["http://localhost:5000/"],
+  "plugins": []
+}

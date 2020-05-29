@@ -20,23 +20,13 @@ From those files, collect test items:
 """
 
 import pytest
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.firefox.options import Options
 
-def test_home():
-    options = Options()
-    options.headless = True
-    driver = webdriver.Firefox(
-        options=options,
-        firefox_binary='/Applications/FirefoxDeveloperEdition.app/Contents/MacOS/firefox-bin',
-        executable_path="/Users/samuel/src/py/pi-stream/bin/geckodriver"
-    )
-    driver.get("http://www.python.org")
-    assert "Python" in driver.title
-    elem = driver.find_element_by_name("q")
+def test_home(browser):
+    browser.get("http://localhost:5000/")
+    assert "Python" in browser.title
+    elem = browser.find_element_by_name("title")
     elem.clear()
     elem.send_keys("pycon")
     elem.send_keys(Keys.RETURN)
-    assert "No results found." not in driver.page_source
-    driver.close()
+    assert "No results found." not in browser.page_source
+    browser.close()
