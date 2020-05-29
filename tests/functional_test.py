@@ -29,13 +29,22 @@ def routes_home(browser):
 
 def routes_add(browser):
     browser.get("http://localhost:5000/add")
-
     #  Make sure that the name is in the title
+    assert "add".upper() in browser.title.upper()
+
+def routes_media_single(browser):
+    #  open the page wiht a known media item
+    browser.get("http://localhost:5000/media/123")
     assert "add".upper() in browser.title.upper()
 
 def test_routes(browser):
     routes_home(browser)
     routes_add(browser)
+
+
+def test_add_new_media(browser):
+    browser.get("http://localhost:5000/add")
+    #  assert 
 
 
 

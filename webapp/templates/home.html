@@ -1,28 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{{ media.title }}{% endblock %}
 
-{% block head %}
-    {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
-{% endblock %}
 
 {% block content %}
   <div class="grid-container">
-  <h1>Media Items<h1>
+    <h1>{{ media.title }}<h1>
     <div class="grid-margin-x grid-x">
-    {% for media in media_items %}
-      <div class="small-3 cell">
-      <a href="{{  'media/'+ media.id | string }}">
-        <p>{{ media.title }}</p>
-        <div class='image'>
-          <img src="{{ media.thumbnail_url }}" />
-        </div>
-      </a>
-      </div>
-    {% endfor %}
-    <div>
+     <div class="small-2 cell"> . </div>
+     <div class="small-8 cell">
+       <video width="320" height="240" controls>
+         <source src="{{ media.url }}" type="{{ media.type }}">
+          Your browser does not support the video tag.
+       </video>
+     </div>
+     <div class="small-2 cell"> . </div>
+    </div>
   </div>
-{% endblock %}
+{% endblock content %}

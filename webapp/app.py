@@ -58,6 +58,11 @@ media_items = [
 def index():
     return render_template('home.html', media_items=media_items)
 
+@app.route('/media/<int:media_id>')
+def show_media(media_id):
+    media = get_media_details(media_id)
+    return render_template('media-single.html', media=media)
+
 @app.route('/add')
 def add():
     return render_template('add.html')

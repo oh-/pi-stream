@@ -5,3 +5,4 @@ selenium
 
 
 pytest-flask
+flask-wtf
