@@ -1,15 +1,3 @@
-{% extends "base.html" %}
-
-{% block title %}Home{% endblock %}
-
-{% block head %}
-    {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
-{% endblock %}
-
-{% block content %}
   <div class="grid-container">
   <h1>Media Items<h1>
     <div class="grid-margin-x grid-x">
@@ -25,4 +13,3 @@
     {% endfor %}
     <div>
   </div>
-{% endblock %}
