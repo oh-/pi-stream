@@ -21,12 +21,21 @@ From those files, collect test items:
 
 import pytest
 
-def test_home(browser):
+def routes_home(browser):
     browser.get("http://localhost:5000/")
-    assert "Python" in browser.title
-    elem = browser.find_element_by_name("title")
-    elem.clear()
-    elem.send_keys("pycon")
-    elem.send_keys(Keys.RETURN)
-    assert "No results found." not in browser.page_source
-    browser.close()
+
+    #  Make sure that the name is in the title
+    assert "pi-stream | Home" in browser.title
+
+def routes_add(browser):
+    browser.get("http://localhost:5000/add")
+
+    #  Make sure that the name is in the title
+    assert "add".upper() in browser.title.upper()
+
+def test_routes(browser):
+    routes_home(browser)
+    routes_add(browser)
+
+
+
