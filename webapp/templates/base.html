@@ -1,3 +1,12 @@
+{#
+
+file: base.html
+
+description: most, if not all pages will extend off of this page. It describes
+the layout of the contenr
+
+#}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +18,15 @@
     {% endblock head %}
 </head>
 <body>
-  <div id="navigation"> {% include 'navigation.html' %}</div>
-  <div id="content">{% block content %}{% endblock content %}</div>
-  <div id="footer">
-    {% block footer %}
-    &copy; Copyright 2020 by <a href="https://www.samueloverington.com/">Samuel Overington</a>.
-    {% endblock footer %}
+  
+  <div id="navigation" class="cell shrink header medium-cell-2"> {% include 'navigation.html' %}</div>
+  <div class="container">
+    <div id="content" class="cell medium-8">{% block content %}{% endblock content %}</div>
+    <div id="footer" class="cell shrink footer">
+      {% block footer %}
+      &copy; Copyright 2020 by <a href="https://www.samueloverington.com/">Samuel Overington</a>.
+      {% endblock footer %}
+    </div>
   </div>
 </body>
 </html>

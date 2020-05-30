@@ -11,5 +11,6 @@ class AddNewMediaForm(FlaskForm):
     #  file_location = '/Users/samuel/Movies/Catch Me if You Can-b09x4lxs.mp4',
     #  categories = ['film', 'leo'],
     #  description = 'A movie',
-    thumbnail_url = 'https://fairytalepictures.files.wordpress.com/2016/02/img_5939-1.jpeg'
+    #  thumbnail_url = 'https://fairytalepictures.files.wordpress.com/2016/02/img_5939-1.jpeg'
+    submit = StringField('Upload and create new media item')
 
