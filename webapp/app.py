@@ -4,15 +4,17 @@ app = Flask(__name__)
 
 media_items = [
     {
-        'title': 'A movie',
+        'title': 'Modern Family',
         'id': 123,
-        'file_location': '/Users/samuel/Movies/Catch Me if You Can-b09x4lxs.mp4',
-        'categories': ['film', 'leo'],
-        'description': 'A movie',
-        'thumbnail_url': 'https://fairytalepictures.files.wordpress.com/2016/02/img_5939-1.jpeg'
+        'file_name': 'modernfam.S11E01.mp4',
+        'url': '/Users/samuel/Movies/Catch Me if You Can-b09x4lxs.mp4',
+        'type': 'video/mp4',
+        'categories': ['tv-series', 'comedy'],
+        'description': 'Modern Family',
+        'thumbnail_url': 'https://www.citytv.com/wp-content/uploads/2012/11/img-allshows-modern_family-S7.jpg'
     },
     {
-        'title': 'A movie',
+        'title': 'Catch Me if you can',
         'id': 123,
         'file_location': '/Users/samuel/Movies/Catch Me if You Can-b09x4lxs.mp4',
         'categories': ['film', 'leo'],
@@ -60,7 +62,8 @@ def index():
 
 @app.route('/media/<int:media_id>')
 def show_media(media_id):
-    media = get_media_details(media_id)
+    #  media = get_media_details(media_id)
+    media = media_items[0]
     return render_template('media-single.html', media=media)
 
 @app.route('/add')
