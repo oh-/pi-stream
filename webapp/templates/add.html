@@ -4,18 +4,19 @@
 
 {% block content %}
   <div class="grid-container">
-  <h1>Media Items<h1>
     <div class="grid-margin-x grid-x">
-    {% for media in media_items %}
-      <div class="small-3 cell">
-      <a href="{{  'media/'+ media.id | string }}">
-        <p>{{ media.title }}</p>
-        <div class='image'>
-          <img src="{{ media.thumbnail_url }}" />
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+          <legend class="boarder-bottom">Add new media</legend>
+          {{ form.title.label(class='form-control-label') }}
+          {{ form.title(class='form-control form-control-lg') }}
+
+        </fieldset>
+        <div class="form-group">
+          {{ form.submit(class='button primary') }}
         </div>
-      </a>
-      </div>
-    {% endfor %}
+      </form>
     <div>
   </div>
 {% endblock content %}

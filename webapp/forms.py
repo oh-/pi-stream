@@ -12,5 +12,6 @@ class AddNewMediaForm(FlaskForm):
     #  categories = ['film', 'leo'],
     #  description = 'A movie',
     #  thumbnail_url = 'https://fairytalepictures.files.wordpress.com/2016/02/img_5939-1.jpeg'
-    submit = StringField('Upload and create new media item')
+    submit = SubmitField('Upload and create new media item')
+
 
