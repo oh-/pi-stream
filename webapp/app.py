@@ -16,6 +16,11 @@ def show_media(media_id):
     media = media_items[0]
     return render_template('media-single.html', media=media)
 
+# TODO: add media edit page
+#  @app.route('/media/<int:media_id>/edit')
+#  def edit_media(media_id):
+#      return render_template('edit_media.html', form=AddNewMediaForm())
+
 @app.route('/add')
 def add():
     return render_template('add.html', form=AddNewMediaForm())

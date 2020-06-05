@@ -3,20 +3,25 @@
 {% block title %}Add new media{% endblock title %}
 
 {% block content %}
-  <div class="grid-container">
-    <div class="grid-margin-x grid-x">
-      <form method="POST" action="">
-        {{ form.hidden_tag() }}
+<div class="grid-container">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div class="grid-x">
+      <div class="cell small-12 medium-3">
+        <filedset>
+        {{ form.media_files.label() }} {{ form.media_files() }}
+        </filedset>
+      </div>
+      <div class="cell small-12 medium-9">
         <fieldset class="form-group">
-          <legend class="boarder-bottom">Add new media</legend>
-          {{ form.title.label(class='form-control-label') }}
-          {{ form.title(class='form-control form-control-lg') }}
-
+          <legend class="boarder-bottom"><h3>Add new media</h3></legend>
+          {{ form.the_title.label() }} {{ form.the_title() }}
+          {{ form.media_type.label() }} {{ form.media_type() }}
+          {{ form.media_thumbnail.label() }} {{ form.media_thumbnail() }}
         </fieldset>
-        <div class="form-group">
           {{ form.submit(class='button primary') }}
-        </div>
-      </form>
-    <div>
-  </div>
+      </div>
+    </div>
+  </form>
+</div>
 {% endblock content %}
