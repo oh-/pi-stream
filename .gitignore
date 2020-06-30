@@ -2,3 +2,5 @@ geckodriver.log
 __pycache__
 
 webapp/static/*.mp4
+.ipynb_checkpoints
+notebooks

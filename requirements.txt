@@ -1,3 +1,6 @@
+bs4
+jupyterlab
+
 flask
 
 pytest
@@ -6,3 +9,4 @@ selenium
 
 pytest-flask
 flask-wtf
+flask-sqlalchemy
