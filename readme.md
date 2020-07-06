@@ -8,3 +8,6 @@ pi-stream is a flask based web app for you movie collection. It is created
 
 `> make serve` runs the server so the webapp is available at [localhost:5000](http://localhost:5000)
 
+# Working on:
+
+[ ] database connection.
